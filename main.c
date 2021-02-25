@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int sum(int v)
+int sum(long v)
 {
   if (v == 0) return 0;
   return (v % 10) + sum(v / 10);
@@ -8,19 +8,19 @@ int sum(int v)
 
 int main()
 {
-  printf("\n\nIf at any time you want to end the program just enter 'Q'\n\n");
+  printf("\n\nIf at any time you want to end the program just enter \n");
+  printf("a negative number or letter\n\n");
 
-  int num = -1;
+  long num = -1;
 
   printf("Please enter a number greater than zero: ");
-  scanf("%i", &num);
+  scanf("%li", &num);
   while (getchar () != '\n');
 
-  if (num == -1)
+  if (num < 0)
     return 0;
   
-  printf("The sum of the digits for the number %i is %i", num, sum(num));
+  printf("The sum of the digits for the number %li is %i", num, sum(num));
 
   return main();
 }
-
